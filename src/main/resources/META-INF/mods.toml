@@ -1,0 +1,48 @@
+modLoader = "javafml" #mandatory
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+logoFile="pointblank.png" #optional
+credits="Vic4Games for the original Vic's Point Blank" #optional
+authors = "${mod_authors}" #optional
+description = '''${mod_description}'''
+
+[[dependencies."${mod_id}"]] #optional
+modId = "forge" #mandatory
+mandatory = true #mandatory
+versionRange = "${forge_version_range}" #mandatory
+ordering = "NONE"
+side = "BOTH"# Here's another dependency
+
+[[dependencies."${mod_id}"]]
+modId = "minecraft"
+mandatory = true
+versionRange = "${minecraft_version_range}"
+ordering = "NONE"
+side = "BOTH"
+
+#Mod Dependencies
+[[dependencies."${mod_id}"]]
+modId = "geckolib"
+mandatory = true
+versionRange = "[4.7,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "jei"
+mandatory = false
+versionRange = "[0,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+modId = "oculus"
+mandatory = false
+versionRange = "[1.7.0,)"
+ordering = "NONE"
+side = "BOTH"
