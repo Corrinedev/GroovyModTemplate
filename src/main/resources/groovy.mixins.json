@@ -1,9 +1,9 @@
 {
     "required": false,
-    "package": "com.corrinedev.mixin",
+    "package": "com.example.mixin",
     "compatibilityLevel": "JAVA_17",
     "minVersion": "0.8",
-    "refmap": "groove.refmap.json",
+    "refmap": "groovy.refmap.json",
     "mixins": [
     ],
     "client": [

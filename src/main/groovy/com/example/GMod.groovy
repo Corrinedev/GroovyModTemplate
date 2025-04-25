@@ -1,25 +1,24 @@
 package com.example
 
+import groovy.transform.CompileStatic
 import net.minecraftforge.common.MinecraftForge
 import net.minecraftforge.eventbus.api.IEventBus
-import net.minecraftforge.eventbus.api.SubscribeEvent
+import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext
 
-@net.minecraftforge.fml.common.Mod("groovy")
-class Mod {
+import java.util.function.Consumer
+
+@Mod("groovy")
+class GMod {
     public static final MODID = "groovy"
     public static IEventBus modEventBus
 
-    Mod() {
+    GMod() {
         modEventBus = FMLJavaModLoadingContext.get().modEventBus
-        modEventBus.addListener(this.onCommonSetup.run())
+        Events.init()
         println "init groovy modid = $MODID!"
         MinecraftForge.EVENT_BUS.register(this)
     }
 
-    def onCommonSetup = {
-        FMLCommonSetupEvent event ->
-                println "init groovy modid = $MODID!"
-            }
 }
